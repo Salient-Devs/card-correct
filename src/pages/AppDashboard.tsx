@@ -8,6 +8,8 @@ import { ProviderSelect } from '@/components/app/ProviderSelect';
 import { ProcessingHistory } from '@/components/app/ProcessingHistory';
 import { ValidationReportPanel } from '@/components/app/ValidationReportPanel';
 import { UserMenu } from '@/components/app/UserMenu';
+import { CreditsDisplay } from '@/components/app/CreditsDisplay';
+import { BuyCreditsDialog } from '@/components/app/BuyCreditsDialog';
 import { processCSV } from '@/lib/csv-processor';
 import { CSVProcessingResult } from '@/types/csv';
 import { useAuth } from '@/contexts/AuthContext';
@@ -83,7 +85,11 @@ export default function AppDashboard() {
       <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
           <h1 className="text-xl font-bold text-foreground">CSV Cleaner</h1>
-          <UserMenu />
+          <div className="flex items-center gap-4">
+            <CreditsDisplay />
+            <BuyCreditsDialog />
+            <UserMenu />
+          </div>
         </div>
       </header>
 
